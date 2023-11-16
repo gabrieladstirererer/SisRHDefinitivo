@@ -1,6 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@model SisRHDefinitivo.Models.FuncionarioModel
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Funcionario SisRH</title>
+</head>
+<body>
+    <h1>Cadastro de Funcionario</h1>
+
+    <form method="post">
+        <div class="row">
+          
+            <input type="text" id="nome" name="Nome" value="@Model.primeiro_nm_func" />
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="Email" value="@Model.nm_pai_func" />
+        </div>
+
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="Idade" value="@Model.nm_mae_func" />
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
