@@ -1,30 +1,103 @@
-﻿@model SisRHDefinitivo.Models.FuncionarioModel
+﻿@model SisRHDefinitivo.ViewModels.FuncionarioViewModel
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cadastro de Funcionario SisRH</title>
-</head>
-<body>
-    <h1>Cadastro de Funcionario</h1>
+@*CSS*@
+<link href="~/css/Funcionario.css" rel="stylesheet">
 
-    <form method="post">
-        <div class="row">
-          
-            <input type="text" id="nome" name="Nome" value="@Model.primeiro_nm_func" />
+<fieldset class="scheduler-border">
+    <legend class="scheduler-border" style="font-size : 15px">
+        <b><i>Dados Pessoais</i></b>
+    </legend>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Funcionario">
+            @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @class = "form-control" }))
         </div>
-
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="Email" value="@Model.nm_pai_func" />
+        <div class="col-xs-12 col-sm-4 col-md-4" id="SB_Funcionario">
+            @(Html.LabelFor(m => m.sobre_nm_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.sobre_nm_func, htmlAttributes: new { @class = "form-control" }))
         </div>
-
-        <div>
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="Idade" value="@Model.nm_mae_func" />
+        <div class="col-xs-12 col-sm-4 col-md-4" id="ULT_Nome">
+            @Html.LabelFor(m => m.ultimo_nm_func, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @class = "form-control" })
         </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" id="DT_Nascimento">
+            @(Html.LabelFor(m => m.dt_nasc_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.dt_nasc_func, htmlAttributes: new { @class = "form-control" }))
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="RC_Funcionario">
+            @(Html.LabelFor(m => m.raca_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.raca_func, htmlAttributes: new { @class = "form-control" }))
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="ULT_Nome">
+            @Html.LabelFor(m => m.ultimo_nm_func, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Mae">
+            @(Html.LabelFor(m => m.nm_mae_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.nm_mae_func, htmlAttributes: new { @class = "form-control" }))
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Pai">
+            @(Html.LabelFor(m => m.nm_pai_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.nm_pai_func, htmlAttributes: new { @class = "form-control" }))
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="ULT_Nome">
+            @Html.LabelFor(m => m.estado_civil_func, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.estado_civil_func, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+</fieldset>
+<fieldset class="scheduler-border">
+    <legend class="scheduler-border" style="font-size : 15px">
+        <b><i>Endereço</i></b>
+    </legend>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" id="NUM_Residencia">
+            @Html.LabelFor(m => m.numero_resr_func, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.numero_resr_func,htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Email">
+            @Html.LabelFor(m => m.email_func, new {@class = "control-label"})
+            @Html.TextBoxFor(m => m.email_func, htmlAttributes: new {@class = "form-control"})
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="CEL_Funcionario">
+            @Html.LabelFor(m => m.celular_func, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.celular_func,htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4" id="Whats_Funcionario">
+            @Html.LabelFor(m => m.whatsapp_fun, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.whatsapp_fun,htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="TEL_Func">
+            @Html.LabelFor(m => m.telefone_func, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.telefone_func,htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_cidade">
+            @Html.LabelFor(m => m.DS_cidadae, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.DS_cidadae,htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2" id="COMP_Funcionario">
+            @Html.LabelFor(m => m.compl_func, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.compl_func,htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10" id="Ponto_Referencia">
+            @Html.LabelFor(m => m.ponto_referencia, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.ponto_referencia,htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+</fieldset>
 
-        <button type="submit">Cadastrar</button>
-    </form>
-</body>
-</html>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

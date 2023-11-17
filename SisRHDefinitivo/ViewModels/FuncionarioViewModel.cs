@@ -7,10 +7,10 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Cod. Funcionario")]
         public int? id_func { get; set; }
 
-        [Display(Name = "Primeiro Nome")]
+        [Display(Name = "Nome")]
         public string primeiro_nm_func { get; set; }
 
-        [Display(Name ="Sobre Nome")]
+        [Display(Name ="Sobrenome")]
         public string sobre_nm_func { get; set; }
 
         [Display(Name = "Ultimo Nome")]
@@ -47,10 +47,10 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Cidade Nascimento" )]
         public string cidade_nasc { get; set; }
 
-        [Display(Name = "Numero Residencia")]
+        [Display(Name = "Numero Residência")]
         public int? numero_resr_func { get; set; }
 
-        [Display(Name = "UF Residencial")]
+        [Display(Name = "UF Residêncial")]
         public string uf_residencial { get; set; }
 
         [Display(Name = "Tipo Moradia")]
@@ -61,6 +61,9 @@ namespace SisRHDefinitivo.ViewModels
 
         [Display(Name = "Whatsapp")]
         public bool whatsapp_fun { get; set; }
+
+        [Display(Name = "Cidade")]
+        public string DS_cidadae { get; set; }
 
         [Display(Name = "Telefone" )]
         public string telefone_func { get; set; }
@@ -132,8 +135,14 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Comprovante Residencia" )]
         public string comprovante_res_func { get; set; }
 
+        [Display(Name = "Complemento")]
+        public string compl_func { get; set; }
+
         [Display(Name = "Nacionalidade")]
         public string nacionalidade_func { get; set; }
+
+        [Display(Name = "Ponto De Referência")]
+        public string  ponto_referencia { get; set; }
 
         [Display(Name = "Ativo")]
         public int? st_status_func { get; set; }

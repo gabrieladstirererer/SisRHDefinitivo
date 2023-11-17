@@ -25,8 +25,9 @@ namespace SisRHDefinitivo.Controllers
 
         public IActionResult CadastrarFuncionario()
         {
-            return View();
+            return View("Index");
         }
+        
 
     }
 }
