@@ -8,6 +8,7 @@ namespace SisRHDefinitivo
         {
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
+
             return services;
         }
     }
