@@ -7,11 +7,9 @@
 <h2>Login</h2>
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-
 {
     //cria a tag do formulário
-    @Html.AntiForgeryToken()
-    // previne o ataque CSRF
+    @Html.AntiForgeryToken() // previne o ataque CSRF
     @Html.ValidationSummary(true)
     if (@ViewBag.Message != null)
     {
@@ -19,26 +17,28 @@
             @ViewBag.Message
         </div>
     }
+    <table>
         <tr>
             <td>@Html.LabelFor(login => login.nm_funcionario)</td>
-            <td>@Html.TextBoxFor(login => login.nm_funcionario)</td>
-            <td>@Html.ValidationMessageFor(login => login.nm_funcionario)</td>
+            <td>@Html.TextBoxFor(login => login.senha_login)</td>
+            <td>@Html.ValidationMessageFor(login => login.nm_funcionario)</td>-
         </tr>
         <tr>
-            <td> @Html.LabelFor(login => login.senha_login)</td>
+            <td> @Html.LabelFor(login => login.nm_funcionario)</td>
             <td> @Html.PasswordFor(login => login.senha_login) </td>
             <td> @Html.ValidationMessageFor(login => login.senha_login) </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Login" )/>
+                <input type="submit" value="Login" />
             </td>
             <td></td>
         </tr>
-    
-} *@
-    
- @* @section Scripts{
+    </table>
+ } *@
+@*  @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
-}  *@
+} *@
+
+<h1>RTetsetetetettete</h1>

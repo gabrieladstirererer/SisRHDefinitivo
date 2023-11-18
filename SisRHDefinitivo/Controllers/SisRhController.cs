@@ -25,9 +25,12 @@ namespace SisRHDefinitivo.Controllers
 
         public IActionResult CadastrarFuncionario()
         {
-            return View("Index");
+            return View();
         }
-        
+
+        //[Route("New")]
+        //public async Task<PartialViewResult> New(
+        //    ViewModels.)
 
     }
 }
