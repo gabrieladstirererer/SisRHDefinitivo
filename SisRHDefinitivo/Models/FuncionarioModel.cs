@@ -15,6 +15,7 @@
         public string nm_pai_func { get; set; }
         public string estado_civil_func { get; set; }
         public string nome_conjugue_func { get; set; }
+        public string ponto_referencia { get; set; }
         public string cidade_nasc { get; set; }
         public int? numero_resr_func { get; set; }
         public string uf_residencial { get; set; }
