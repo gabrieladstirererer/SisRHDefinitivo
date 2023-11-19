@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  background-color: rgb(16,16,16);
 }
 
 @media (min-width: 768px) {
@@ -14,9 +15,16 @@ html {
 
 html {
   position: relative;
-  min-height: 100%;
+  min-height: 80%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: rgb(16,16,16);
+    border-width: 3px;
+    border-top-color: rgb(28,218,255);
+}
+
+.grid{
+    border-radius: 5px;
 }
