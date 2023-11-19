@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SisRHDefinitivo.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
 {
@@ -146,5 +147,58 @@ namespace SisRHDefinitivo.ViewModels
 
         [Display(Name = "Ativo")]
         public int? st_status_func { get; set; }
+
+        public static implicit operator FuncionarioViewModel(
+            FuncionarioModel funcionarioModel)
+        {
+            return new FuncionarioViewModel()
+            {
+                id_func = funcionarioModel.id_func,
+                primeiro_nm_func = funcionarioModel.primeiro_nm_func,
+                sobre_nm_func = funcionarioModel.sobre_nm_func,
+                ultimo_nm_func = funcionarioModel.ultimo_nm_func,
+                matricula = funcionarioModel.matricula,
+                dt_nasc_func = funcionarioModel.dt_nasc_func,
+                sexo_func = funcionarioModel.sexo_func,
+                raca_func = funcionarioModel.raca_func,
+                tipo_sanguineo_func = funcionarioModel.tipo_sanguineo_func,
+                nm_mae_func = funcionarioModel.nm_mae_func,
+                nm_pai_func = funcionarioModel.nm_pai_func,
+                estado_civil_func = funcionarioModel.estado_civil_func,
+                nome_conjugue_func = funcionarioModel.nome_conjugue_func,
+                cidade_nasc = funcionarioModel.cidade_nasc,
+                numero_resr_func = funcionarioModel.numero_resr_func,
+                uf_residencial = funcionarioModel.uf_residencial,
+                tipo_moradia = funcionarioModel.tipo_moradia,
+                celular_func = funcionarioModel.celular_func,
+                whatsapp_fun = funcionarioModel.whatsapp_fun,
+                telefone_func = funcionarioModel.telefone_func,
+                email_func = funcionarioModel.email_func,
+                email_corp_func = funcionarioModel.email_corp_func,
+                num_agen_func = funcionarioModel.num_agen_func,
+                num_conta_func = funcionarioModel.num_conta_func,
+                fk_cargo = funcionarioModel.fk_cargo,
+                fk_dep = funcionarioModel.fk_dep,
+                fk_banco = funcionarioModel.fk_banco,
+                cpf_funk = funcionarioModel.cpf_funk,
+                rg_func = funcionarioModel.rg_func,
+                dt_emissao_func = funcionarioModel.dt_emissao_func,
+                orgao_emissor_func = funcionarioModel.orgao_emissor_func,
+                reservista_func = funcionarioModel.reservista_func,
+                titulo_eleitor_func = funcionarioModel.titulo_eleitor_func,
+                zona_eleitor_func = funcionarioModel.zona_eleitor_func,
+                sessao_eleitor_func = funcionarioModel.sessao_eleitor_func,
+                cidade_eleitor_func = funcionarioModel.cidade_eleitor_func,
+                uf_eleitor_func = funcionarioModel.uf_eleitor_func,
+                escolaridade_func = funcionarioModel.escolaridade_func,
+                cns_func = funcionarioModel.cns_func,
+                cert_nasc_func = funcionarioModel.cert_nasc_func,
+                cert_casamento_func = funcionarioModel.cert_casamento_func,
+                comprovante_res_func = funcionarioModel.comprovante_res_func,
+                nacionalidade_func = funcionarioModel.nacionalidade_func,
+                ponto_referencia = funcionarioModel.ponto_referencia,
+                st_status_func = funcionarioModel.st_status_func
+            };
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model SisRHDefinitivo.Models.LoginModel
+﻿@* @model SisRHDefinitivo.Models.LoginModel
 
 @{
     ViewBag.Title = "Login SisRH";
@@ -21,7 +21,7 @@
         <tr>
             <td>@Html.LabelFor(login => login.nm_funcionario)</td>
             <td>@Html.TextBoxFor(login => login.senha_login)</td>
-            <td>@Html.ValidationMessageFor(login => login.nm_funcionario)</td>
+            <td>@Html.ValidationMessageFor(login => login.nm_funcionario)</td>-
         </tr>
         <tr>
             <td> @Html.LabelFor(login => login.nm_funcionario)</td>
@@ -36,7 +36,7 @@
             <td></td>
         </tr>
     </table>
-}
-@* @section Scripts{
+ } *@
+@*  @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
 } *@
