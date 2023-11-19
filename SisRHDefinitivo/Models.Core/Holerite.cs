@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class HoleriteModel
+    public class Holerite
     {
         public int? id_hol { get; set; }
         public int? fk_fp { get; set; }

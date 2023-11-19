@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class DependenteModel
+    public class Dependente
     {
         public int? id_dep { get; set; }
         public string nome_dep { get; set; }

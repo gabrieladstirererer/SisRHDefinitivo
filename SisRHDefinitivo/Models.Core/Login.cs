@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SisRHDefinitivo.Models
+namespace SisRHDefinitivo.Models.Core
 {
-    public class LoginModel
+    public class Login
     {
         public int? id_login { get; set; }
         public string senha_login { get; set; }

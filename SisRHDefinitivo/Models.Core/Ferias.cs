@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class FeriasModel
+    public class Ferias
     {
         public int? id_ferias { get; set; }
         public DateTime? dt_inicioFerias { get; set; }
