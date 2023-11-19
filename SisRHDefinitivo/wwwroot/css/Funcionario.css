@@ -36,7 +36,10 @@ legend.scheduler-border {
 }
 
 body{
-    background-color : black;
+    /*background-color : black;*/
     font-size : medium;
-    color : white;
+/*    color : white;*/
+    background-color: rgba(0,252,168);
+
+   
 }
