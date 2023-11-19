@@ -47,7 +47,9 @@ namespace SisRHDefinitivo.Repository
 
                         lista.Add(model);
                     }
+                    FecharBanco(cn);
                     return lista;
+                    
                 }
              }
             catch (Exception)

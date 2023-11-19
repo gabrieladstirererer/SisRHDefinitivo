@@ -1,18 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SisRHDefinitivo</title>
+    <title>@ViewData["Title"] - SisRH</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SisRHDefinitivo.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <style>
+        .lkzaul {
+            color: rgb(28, 218, 255)
+        }
+
+    </style>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3" style="border-bottom: 1px groove rgb(28, 218, 255) !important;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="SisRh" asp-action="Index">SISRH</a>
+                <img src="~/Imagens/logo.png" asp-controller="SisRh" alt="some text" width=120 height=99>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,13 +28,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SisRh" asp-action="Index">SisRh</a>
+                            <a class="nav-link" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="SisRh" asp-action="Index">SisRh</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SisRh" asp-action="CadastrarFuncionario">Cadastro Funcionario</a>
+                            <a class="nav-link" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="SisRh" asp-action="CadastrarFuncionario">Cadastro Funcionario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Apontamento" asp-action="ConsultarFolhaPonto">Folha Ponto</a>
+                            <a class="nav-link" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="Apontamento" asp-action="ConsultarFolhaPonto">Consultar Folha Ponto</a>
                         </li>
                     </ul>
                 </div>

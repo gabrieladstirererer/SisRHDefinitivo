@@ -2,10 +2,64 @@
 @{
     ViewBag.Title = "ConsultarFolhaPonto";
 }
+<link href="~/css/Funcionario.css" rel="stylesheet">
 
-<h1 style="color: rgb(28, 218, 255);">Consultar Folha de Ponto</h1>
+<style>
+body{
+        background: linear-gradient(to right, black, rgb(16, 16, 16),black);
+}
+.txtFiltro{
+        border: 1px groove rgb(28, 218, 255) !important;
+        border-left-color: rgb(0,252,168) !important;
+        border-top-color: rgb(0,252,168) !important;
+        border-radius: 7px;
+        background-color: rgb(16, 16, 16);
+        color: white 
+        }
+
+fieldset.scheduler-border {
+        border: 1px groove rgb(28, 218, 255) !important;
+        border-left-color: rgb(0,252,168) !important;
+        border-top-color: rgb(0,252,168) !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+        }
+
+    .custom-button {
+        background: linear-gradient(to right, rgb(0, 252, 168), rgb(28, 218, 255));
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+</style>
+<h1 style="color: rgb(28, 218, 255); font-size: 20px; text-align: center;">Consultar Folha de Ponto</h1>
+
+<fieldset class="scheduler-border">
+    <legend class="scheduler-border">
+        <b><i>Filtros de pesquisa</i></b>
+    </legend>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3"><input type="text" class="txtFiltro" name="Nome" size="10" /></div>
+        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" /></div>
+        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" /></div>
+        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" /></div>
+        <div class="col-xs-12 col-sm-4 col-md-3"><input type="submit" class="custom-button" /></div>
+    </div>
+</fieldset>
+   
+
 <div class="grid">
-    <table class="table" style="border-radius: 5px; border-width: 1px; border-color: rgb(0,252,168)">
+    <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
         <tr style="color: rgb(28, 218, 255);">
          <th>
             @Html.DisplayNameFor(model => model.Nome_Func)
