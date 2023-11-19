@@ -13,4 +13,16 @@
     <None Remove="NovaPasta\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\Think 111.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Think 111.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
 </Project>
