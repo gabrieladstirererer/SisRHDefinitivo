@@ -17,7 +17,6 @@ namespace SisRHDefinitivo.Models
         [Display(Name = "Entrada 1")]
         public TimeSpan? Hr_apont_fp_E1 { get; set; }
         public byte? Atraso_fp { get; set; }
-        
         public byte? Adv_fp { get; set; }
         [Display(Name = "Observação")]
         public string? Desc_adv_fp { get; set; }
@@ -44,10 +43,6 @@ namespace SisRHDefinitivo.Models
         public string Horas_trabalhadas { get; set; }
         [Display(Name = "Extra")]
         public string Horas_extras { get; set; }
-
-        
-
-
 
     }
 }
