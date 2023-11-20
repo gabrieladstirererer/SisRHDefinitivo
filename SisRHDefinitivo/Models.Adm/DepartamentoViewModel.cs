@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -15,7 +15,7 @@ namespace SisRHDefinitivo.ViewModels
         public int? fk_chefe_dep { get; set; }
 
         public static implicit operator DepartamentoViewModel(
-            DepartamentoModel departamento)
+            Departamento departamento)
         {
             return new DepartamentoViewModel()
             {

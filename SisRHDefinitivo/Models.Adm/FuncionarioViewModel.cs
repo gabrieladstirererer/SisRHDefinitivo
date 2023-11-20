@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -149,7 +149,7 @@ namespace SisRHDefinitivo.ViewModels
         public int? st_status_func { get; set; }
 
         public static implicit operator FuncionarioViewModel(
-            FuncionarioModel funcionarioModel)
+            Funcionario funcionarioModel)
         {
             return new FuncionarioViewModel()
             {

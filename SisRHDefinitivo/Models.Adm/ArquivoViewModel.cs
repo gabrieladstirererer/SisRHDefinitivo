@@ -1,9 +1,10 @@
 ﻿using SisRHDefinitivo.Models.Adm;
+using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.Models.Adm
 {
-    public class ArquivoModel
+    public class ArquivoViewModel
     {
         [Display(Name ="Cod. Arquivo")]
         public int? id_arq { get; set; }
@@ -23,7 +24,7 @@ namespace SisRHDefinitivo.Models.Adm
         // classe passagem dados Funcionario
         public int? fk_func { get; set; }
 
-        public static implicit operator ArquivoModel(
+        public static implicit operator ArquivoViewModel(
             Arquivo arquivo)
         {
             return new ArquivoViewModel()
