@@ -27,6 +27,7 @@ legend.scheduler-border {
 }
 
 body {
+    color: white;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
@@ -69,3 +70,14 @@ body {
 .login-form input[type="submit"]:hover {
         background-color: #45a049;
 }
+
+.imagem-fundo {
+    margin-top: 300px;
+    background-image: url('../css/Think 111.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 1;
+    position: relative;
+}
+

@@ -1,0 +1,30 @@
+﻿<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center">Login</h2>
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+                        {
+                            <div class="form-group">
+                               @*  @Html.Label("User", new { @class = "font-weight-bold" }) *@
+                                @Html.TextBox("User", new { @class = "form-control", required = "required" })
+                                <div class="invalid-feedback">Por favor, informe o nome de usuário.</div>
+                            </div>
+
+                            <div class="form-group">
+                               @*  @Html.Label("Senha", new { @class = "font-weight-bold" }) *@
+                                @Html.Password("Senha", new { @class = "form-control", required = "required" })
+                                <div class="invalid-feedback">Por favor, informe a senha.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
