@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class ArquivoModel
+    public class Arquivo
     {
         public int? id_arq { get; set; }
         public string caminho_arq { get; set; }

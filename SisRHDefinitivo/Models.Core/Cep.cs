@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class CepModel
+    public class Cep
     {
         public int? ID_CEP { get; set; }
         public string CEP { get; set; }

@@ -1,9 +1,9 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Adm;
 using System.ComponentModel.DataAnnotations;
 
-namespace SisRHDefinitivo.ViewModels
+namespace SisRHDefinitivo.Models.Adm
 {
-    public class ArquivoViewModel
+    public class ArquivoModel
     {
         [Display(Name ="Cod. Arquivo")]
         public int? id_arq { get; set; }
@@ -23,17 +23,17 @@ namespace SisRHDefinitivo.ViewModels
         // classe passagem dados Funcionario
         public int? fk_func { get; set; }
 
-        public static implicit operator ArquivoViewModel(
-            ArquivoModel arquivoModel)
+        public static implicit operator ArquivoModel(
+            Arquivo arquivo)
         {
             return new ArquivoViewModel()
             {
-                id_arq = arquivoModel.id_arq,
-                caminho_arq = arquivoModel.caminho_arq,
-                tipo_arq = arquivoModel.tipo_arq,
-                tipo_doc_arq = arquivoModel.tipo_doc_arq,
-                st_ativo_arq = arquivoModel.st_ativo_arq,
-                fk_func = arquivoModel.fk_func
+                id_arq = arquivo.id_arq,
+                caminho_arq = arquivo.caminho_arq,
+                tipo_arq = arquivo.tipo_arq,
+                tipo_doc_arq = arquivo.tipo_doc_arq,
+                st_ativo_arq = arquivo.st_ativo_arq,
+                fk_func = arquivo.fk_func
             };
         }
     }

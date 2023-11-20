@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class DeclaracaoModel
+    public class Declaracao
     {
         public int? id_dec { get; set; }
         public string tipo_dec { get; set; }

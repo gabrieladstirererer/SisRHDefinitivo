@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class CargoModel
+    public class Cargo
     {
         public int id_cargo { get; set; }
         public string desc_cargo { get; set; }

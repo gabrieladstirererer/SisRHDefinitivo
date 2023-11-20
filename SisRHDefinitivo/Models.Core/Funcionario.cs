@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class FuncionarioModel
+    public class Funcionario
     {
         public int? id_func { get; set; }
         public string primeiro_nm_func { get; set; }
