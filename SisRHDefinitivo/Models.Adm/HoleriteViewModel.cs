@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -27,7 +27,7 @@ namespace SisRHDefinitivo.ViewModels
         public int? fk_ferias { get; set; }
 
         public static implicit operator HoleriteViewModel(
-            HoleriteModel holeriteModel)
+            Holerite holeriteModel)
         {
             return new HoleriteViewModel()
             {

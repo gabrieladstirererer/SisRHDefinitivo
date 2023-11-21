@@ -1,6 +1,6 @@
 ﻿
 using System.Data.Entity;
-using SisRHDefinitivo.Models;
+using SisRHDefinitivo.Models.Core;
 
 namespace SisRHDefinitivo.Repository
 {
@@ -15,8 +15,8 @@ namespace SisRHDefinitivo.Repository
             _context = context;
         }
 
-        public async Task<FuncionarioModel> AdicionarAsync
-            (FuncionarioModel FuncionarioModel)
+        public async Task<Funcionario> AdicionarAsync
+            (Funcionario FuncionarioModel)
         {
 
             //DbContext _context1 = _context;
@@ -32,12 +32,12 @@ namespace SisRHDefinitivo.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<List<FuncionarioModel>> BuscarTodos()
+        public async Task<List<Funcionario>> BuscarTodos()
         {
             throw new NotImplementedException();
         }
 
-        public Task<FuncionarioModel> ListarAsync(int id)
+        public Task<Funcionario> ListarAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -47,7 +47,7 @@ namespace SisRHDefinitivo.Repository
             throw new NotImplementedException();
         }
 
-        public Task<FuncionarioModel> UpadateAsync(FuncionarioModel FuncionarioModel)
+        public Task<Funcionario> UpadateAsync(Funcionario FuncionarioModel)
         {
             throw new NotImplementedException();
         }

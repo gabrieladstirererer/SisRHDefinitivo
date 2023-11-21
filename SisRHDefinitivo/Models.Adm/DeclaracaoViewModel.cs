@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -37,7 +37,7 @@ namespace SisRHDefinitivo.ViewModels
         public int aut_desc { get; set; }
 
         public static implicit operator DeclaracaoViewModel(
-            DeclaracaoModel declaracaoModel)
+            Declaracao declaracaoModel)
         {
             return new DeclaracaoViewModel()
             {

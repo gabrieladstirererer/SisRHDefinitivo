@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -15,9 +15,9 @@ namespace SisRHDefinitivo.ViewModels
         public decimal? salario_cargo { get; set; }
 
         public static implicit operator CargoViewModel(
-            CargoModel cargoModel)
+            Cargo cargoModel)
         {
-            return new CargoModel
+            return new CargoViewModel
             {
                 id_cargo = cargoModel.id_cargo,
                 desc_cargo = cargoModel.desc_cargo,

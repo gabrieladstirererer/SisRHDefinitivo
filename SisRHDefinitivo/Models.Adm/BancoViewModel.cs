@@ -1,4 +1,5 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Adm;
+using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -11,9 +12,13 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Banco")]
         public string banco { get; set; }
 
-        public static implicit operator BancoViewModel(
-            BancoModel bancoModel)
+        public static implicit operator BancoViewModel(Banco bancoModel)
         {
+            if (bancoModel == null)
+            {
+                return null;
+            }
+
             return new BancoViewModel()
             {
                 id_banco = bancoModel.id_banco,

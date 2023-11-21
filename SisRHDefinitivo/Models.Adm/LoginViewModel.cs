@@ -1,4 +1,4 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -15,7 +15,7 @@ namespace SisRHDefinitivo.ViewModels
         public bool trocar_senha { get; set; }
 
         public static implicit operator LoginViewModel(
-           LoginModel loginModel)
+           Login loginModel)
         {
             return new LoginViewModel
             {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using SisRHDefinitivo.Models;
+using SisRHDefinitivo.Models.Core;
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -37,7 +37,7 @@ namespace SisRHDefinitivo.ViewModels
         public decimal? Pensao_dep { get; set; }
 
         public static implicit operator DependenteViewModel(
-           DependenteModel dependenteModel)
+           Dependente dependenteModel)
         {
             return new DependenteViewModel()
             {

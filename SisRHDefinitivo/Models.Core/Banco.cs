@@ -1,6 +1,6 @@
-﻿namespace SisRHDefinitivo.Models
+﻿namespace SisRHDefinitivo.Models.Core
 {
-    public class BancoModel
+    public class Banco
     {
         public int id_banco { get; set; }
         public string banco { get; set; }

@@ -1,4 +1,5 @@
-﻿using SisRHDefinitivo.Models;
+﻿using SisRHDefinitivo.Models.Core;
+
 using System.ComponentModel.DataAnnotations;
 
 namespace SisRHDefinitivo.ViewModels
@@ -29,7 +30,7 @@ namespace SisRHDefinitivo.ViewModels
         public int? fk_func { get; set; }
 
         public static implicit operator FeriasViewModel(
-            FeriasModel feriasModel)
+            Ferias feriasModel)
         {
             return new FeriasViewModel()
             {   
