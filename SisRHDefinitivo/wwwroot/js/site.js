@@ -12,6 +12,10 @@ function updateTime() {
 setInterval(updateTime, 1000); 
 updateTime();
 
+//mascaras nos inputs
+jquery(function($) {
+    $("#DT_Nascimento").mask("00/00/0000");
+});
 
 $(function () {
     var str = '#len'; //increment by 1 up to 1-nelemnts
@@ -27,4 +31,3 @@ $(function () {
         }, 500)
     });
 });
-
