@@ -52,7 +52,7 @@
 </fieldset>
 <fieldset class="scheduler-border">
     <legend class="scheduler-border" style="font-size : 15px">
-        <b><i>Endereço</i></b> 
+        <b><i>Endereço</i></b>
     </legend>
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4" id="NUM_Residencia">
@@ -91,12 +91,36 @@
             @Html.LabelFor(m => m.ponto_referencia, new  {@class = "control-label"})
             @Html.TextBoxFor(m => m.ponto_referencia,htmlAttributes: new { @class = "form-control" })
         </div>
+        <div class="col-xs-12 col-sm-10 col-md-10" id="Ponto_Referencia">
+            @Html.LabelFor(m => m.ponto_referencia, new  {@class = "control-label"})
+            @Html.TextBoxFor(m => m.ponto_referencia,htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-xs-12 colcol-sm-4 col-md-4" id="ddlTipoMoradia">
+            @Html.LabelFor(m => m.tipo_moradia, new  {@class = "control-label"})
+            @Html.DropDownListFor(m => m.tipo_moradia, new SelectList(new List<Object>{
+            new {value = "AP", text ="Apartamento"}
+            }, "value", "text", 0), htmlAttributes: new { @class = "form-control"}));
+        </div>
+        @{
+            List<SelectListItem> tipoMoradias = new List<SelectListItem>
+        {
+        new SelectListItem { Text = "0", Value = "Casa" },
+        new SelectListItem { Text = "1", Value = "Apartamento" },
+        new SelectListItem { Text = "2", Value = "Kitnet" },
+        new SelectListItem { Text = "3", Value = "Casas em condomínios fechados" }
+        };
+        }
+        <div class="col-xs-12 colcol-sm-4 col-md-4" id="ddlTipoMoradia">
+            <select id="coresDropdown" name="coresDropdown">
+                <option value="">Selecione um Tipo de Moradia</option>
+                @foreach (var moradia in tipoMoradias)
+                {
+                    <option value="@moradia.Value">@moradia.Text</option>
+                }
+            </select>
+        </div>
     </div>
 </fieldset>
-
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

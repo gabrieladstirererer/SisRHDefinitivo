@@ -1,9 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-// Relogio
+﻿
 function updateTime() {
     const timeElement = document.getElementById('time');
     const now = new Date();
@@ -12,11 +7,11 @@ function updateTime() {
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const timeString = `${hours}:${minutes}:${seconds}`;
     timeElement.textContent = timeString;
-}
+};
 
-setInterval(updateTime, 1000); // Atualiza a cada segundo
-updateTime(); // Chama a função para exibir o tempo atual imediatamente
-Alert("Teste 1234567")
+setInterval(updateTime, 1000); 
+updateTime();
+
 
 $(function () {
     var str = '#len'; //increment by 1 up to 1-nelemnts
@@ -32,3 +27,4 @@ $(function () {
         }, 500)
     });
 });
+

@@ -22,13 +22,14 @@ body {
 }
 
 fieldset.scheduler-border {
-    border: 1px groove #ddd !important;
+    border: 1px groove rgb(28, 218, 255) !important;
+    border-left-color: rgb(0,252,168) !important;
+    border-top-color: rgb(0,252,168) !important;
     padding: 0 1.4em 1.4em 1.4em !important;
     margin: 0 0 1.5em 0 !important;
     -webkit-box-shadow: 0px 0px 0px 0px #000;
     box-shadow: 0px 0px 0px 0px #000;
 }
-
 legend.scheduler-border {
     font-size: 1.2em !important;
     font-weight: bold !important;
@@ -36,29 +37,20 @@ legend.scheduler-border {
 }
 
 body {
-    /*background-color : black;*/
     font-size: medium;
-    /*    color : white;*/
-    background-color: rgba(0,252,168);
+    background: linear-gradient(to right, black, rgb(16, 16, 16),black);
+    color:white
 }
-    /*}
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-*/
-    .clock {
-    background-color: #333;
+
+.clock {
+    background: linear-gradient(to right, black, rgb(16, 16, 16),black);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .time {
-    color: white;
+    color: rgb(28, 218, 255);
     font-size: 2rem;
 }
+
