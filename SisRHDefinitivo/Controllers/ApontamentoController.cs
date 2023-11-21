@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SisRHDefinitivo.Repository;
+using SisRHDefinitivo.Core.Repository;
 
-namespace SisRHDefinitivo.Controllers
+namespace SisRHDefinitivo.Adm.Controllers
 {
     public class ApontamentoController : Controller
     {

@@ -1,4 +1,4 @@
-namespace SisRHDefinitivo.Models
+namespace SisRHDefinitivo.Adm.ViewModels
 {
     public class ErrorViewModel
     {

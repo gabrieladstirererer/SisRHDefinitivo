@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SisRHDefinitivo.Controllers
+namespace SisRHDefinitivo.Adm.Controllers
 {
     public class SisRhController : Controller
     {
@@ -22,15 +22,5 @@ namespace SisRHDefinitivo.Controllers
         {
             return View();
         }
-
-        public IActionResult CadastrarFuncionario()
-        {
-            return View();
-        }
-
-        //[Route("New")]
-        //public async Task<PartialViewResult> New(
-        //    ViewModels.)
-
     }
 }
