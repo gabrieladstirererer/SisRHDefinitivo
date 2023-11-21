@@ -22,26 +22,32 @@
             @ViewBag.Message
         </div>
     }
-    <fieldset class="scheduler-border">
-        <legend class="scheduler-border">
-            <b>Login</b>
-        </legend>
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Funcionario">
-                @(Html.LabelFor(m => m.id_login, new { @class = "control-label" }))
-                @(Html.TextBoxFor(m => m.id_login, htmlAttributes: new { @class = "form-control" }))
+    <div class="imagem-fundo">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">
+                <b>Login</b>
+            </legend>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6" id="NM_Funcionario">
+                    @(Html.LabelFor(m => m.id_login, new { @class = "control-label" }))
+                    @(Html.TextBoxFor(m => m.id_login, htmlAttributes: new { @class = "form-control" }))
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6" id="NM_Funcionario">
+                    @Html.LabelFor(login => login.senha_login, new { @class = "control-label" })
+                    @Html.PasswordFor(login => login.senha_login, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(login => login.senha_login)
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12" id="btnLogin">
+                    <input class="btn btn-primary btn-block" type="submit" value="Login" />
+                </div>
+                
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Funcionario">
-                @Html.LabelFor(login => login.senha_login)
-                @Html.PasswordFor(login => login.senha_login)
-                @Html.ValidationMessageFor(login => login.senha_login)
-                <input type="submit" value="Login" />
-            </div>
-        </div>
-        <div class="image">
-            <img src="~/css/WhatsApp Image 2023-10-23 at 22.00.24.jpeg" whidth="0px">
-        </div>
-    </fieldset>
+          @*   <div class="image">
+                <img src="~/css/Think 111.jpg" width="0px">
+            </div> *@
+        </fieldset>
+    </div>
+    
     @*  @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
   *@
