@@ -109,7 +109,7 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Titulo de Eleitor")]
         public string titulo_eleitor_func { get; set; }
 
-        [Display(Name = "Zona Eleitor Funcionario")]
+        [Display(Name = "Zona Eleitoral")]
         public string zona_eleitor_func { get; set; }
 
         [Display(Name = "Sessão Eleitoral")]
@@ -133,7 +133,7 @@ namespace SisRHDefinitivo.ViewModels
         [Display(Name = "Certidão Casamento")]
         public string cert_casamento_func { get; set; }
 
-        [Display(Name = "Comprovante Residencia" )]
+        [Display(Name = "Comprovante Residência" )]
         public string comprovante_res_func { get; set; }
 
         [Display(Name = "Complemento")]
