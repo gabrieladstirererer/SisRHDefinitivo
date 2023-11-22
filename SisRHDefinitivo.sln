@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRHDefinitivo.Adm", "SisRHDefinitivo\SisRHDefinitivo.Adm.csproj", "{E49BD1B9-BC41-4F28-8EC0-1C660A9D2387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRHDefinitivo.Mvc.Adm", "SisRHDefinitivo\SisRHDefinitivo.Mvc.Adm.csproj", "{E49BD1B9-BC41-4F28-8EC0-1C660A9D2387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisRHDefinitivo.Core", "SisRHDefinitivo.Core\SisRHDefinitivo.Core.csproj", "{779AB8DF-DA2E-4841-ABAE-4906F312681F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRHDefinitivo.Core", "SisRHDefinitivo.Core\SisRHDefinitivo.Core.csproj", "{779AB8DF-DA2E-4841-ABAE-4906F312681F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

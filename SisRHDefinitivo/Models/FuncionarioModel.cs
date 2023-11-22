@@ -1,7 +1,7 @@
 ﻿using SisRHDefinitivo.Core.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace SisRHDefinitivo.Adm.Models
+namespace SisRHDefinitivo.Mvc.Adm.Models
 {
     public class FuncionarioModel
     {

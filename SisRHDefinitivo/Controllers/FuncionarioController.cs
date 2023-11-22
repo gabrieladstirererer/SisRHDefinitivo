@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SisRHDefinitivo.Adm.Controllers
+namespace SisRHDefinitivo.Mvc.Adm.Controllers
 {
     public class FuncionarioController : Controller
     {

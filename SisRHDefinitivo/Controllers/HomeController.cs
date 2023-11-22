@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SisRHDefinitivo.Adm.ViewModels;
+using SisRHDefinitivo.Mvc.Adm.ViewModels;
 using SisRHDefinitivo.Core.Models;
 using System.Diagnostics;
 
-namespace SisRHDefinitivo.Adm.Controllers
+namespace SisRHDefinitivo.Mvc.Adm.Controllers
 {
     public class HomeController : Controller
     {
