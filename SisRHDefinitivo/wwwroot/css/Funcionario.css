@@ -54,3 +54,12 @@ body {
     font-size: 2rem;
 }
 
+#file-close a:hover {
+    background-color: rgb(0,252,168) !important
+}
+
+input {
+    border-left-color: rgb(0,252,168) !important;
+    border-top-color: rgb(0,252,168) !important;
+}
+

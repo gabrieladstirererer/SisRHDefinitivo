@@ -9,12 +9,20 @@ function updateTime() {
     timeElement.textContent = timeString;
 };
 
-setInterval(updateTime, 1000); 
+setInterval(updateTime, 1000);
 updateTime();
 
 //mascaras nos inputs
-jquery(function($) {
+$(function ($) {
     $("#DT_Nascimento").mask("00/00/0000");
+});
+
+$(document).ready(function () {
+    $(".datepicker").datepicker({
+        dateformat: "dd-mm-yy",
+        changemonth: true,
+        changeyear: true
+    });
 });
 
 $(function () {
@@ -31,3 +39,4 @@ $(function () {
         }, 500)
     });
 });
+
