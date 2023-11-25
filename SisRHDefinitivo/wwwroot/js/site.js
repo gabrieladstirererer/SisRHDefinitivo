@@ -8,22 +8,17 @@ function updateTime() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     timeElement.textContent = timeString;
 };
-
 setInterval(updateTime, 1000);
 updateTime();
 
-//mascaras nos inputs
-$(function ($) {
-    $("#DT_Nascimento").mask("00/00/0000");
-});
+function submitGravar() {
+    validate() && document.forms["fmrFuncionario"].submit() 
+};
 
-$(document).ready(function () {
-    $(".datepicker").datepicker({
-        dateformat: "dd-mm-yy",
-        changemonth: true,
-        changeyear: true
-    });
-});
+function validate() {
+  
+}
+
 
 $(function () {
     var str = '#len'; //increment by 1 up to 1-nelemnts

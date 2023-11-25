@@ -2,186 +2,198 @@
 
 <link href="~/css/Funcionario.css" rel="stylesheet">
 
+
 @*Relogio digital*@
 <div class="clock">
     <div class="time" id="time">12:00:00</div>
 </div>
 <fieldset class="scheduler-border">
     <legend class="scheduler-border" style="font-size: 30px;">
-        <b> + Inclusão de Funcionarios</b>
+         <b>+Inclusão de Funcionarios</b> 
     </legend>
-<fieldset class="scheduler-border">
-    <legend class="scheduler-border" style="font-size : 15px">
-        <b><i>Dados Pessoais</i></b>
-    </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Funcionario">
-            @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border" style="font-size : 15px">
+            <b><i>Dados Pessoais</i></b>
+        </legend>
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Funcionario">
+                @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="SB_Funcionario">
+                @(Html.LabelFor(m => m.sobre_nm_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.sobre_nm_func, htmlAttributes: new { @placeholder = "Sobrenome", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="ULT_Nome">
+                @Html.LabelFor(m => m.ultimo_nm_func, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @placeholder = "Ultimo Nome", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="SB_Funcionario">
-            @(Html.LabelFor(m => m.sobre_nm_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.sobre_nm_func, htmlAttributes: new { @placeholder = "Sobrenome", @class = "form-control" }))
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DT_Nascimento">
+                @(Html.LabelFor(m => m.dt_nasc_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.dt_nasc_func, htmlAttributes: new { @placeholder = "dd/mm/yyyy", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="RC_Funcionario">
+                @(Html.LabelFor(m => m.raca_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.raca_func, htmlAttributes: new { @placeholder = "Raça", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Sangue">
+                @Html.LabelFor(m => m.tipo_sanguineo_func, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @placeholder = "Tipo Sanguineo", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="ULT_Nome">
-            @Html.LabelFor(m => m.ultimo_nm_func, new { @class = "control-label" })
-            @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @placeholder = "Ultimo Nome", @class = "form-control" })
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Mae">
+                @(Html.LabelFor(m => m.nm_mae_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.nm_mae_func, htmlAttributes: new { @placeholder = "Nome Mãe", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Pai">
+                @(Html.LabelFor(m => m.nm_pai_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.nm_pai_func, htmlAttributes: new { @placeholder = "Nome Pai", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Estado_CV">
+                @Html.LabelFor(m => m.estado_civil_func, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.estado_civil_func, htmlAttributes: new {@placeholder = "Estado Civil", @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DT_Nascimento">
-            @(Html.LabelFor(m => m.dt_nasc_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.dt_nasc_func, htmlAttributes: new { @placeholder = "dd/mm/yyyy", @class = "form-control" }))
+    </fieldset>
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border" style="font-size : 15px">
+            <b><i>Endereço</i></b>
+        </legend>
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="NUM_Residencia">
+                @Html.LabelFor(m => m.numero_resr_func, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.numero_resr_func,htmlAttributes: new {@placeholder = "N° Residência", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Email">
+                @Html.LabelFor(m => m.email_func, new { @class = "control-label"})
+                @Html.TextBoxFor(m => m.email_func, htmlAttributes: new { @placeholder ="Exemplo@gmail.com", @class = "form-control"})
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="CEL_Funcionario">
+                @Html.LabelFor(m => m.celular_func, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.celular_func,htmlAttributes: new {@placeholder = "(+55) 00-00000-0000", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="RC_Funcionario">
-            @(Html.LabelFor(m => m.raca_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.raca_func, htmlAttributes: new { @placeholder = "Raça", @class = "form-control" }))
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="Whats_Funcionario">
+                @Html.LabelFor(m => m.whatsapp_fun, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.whatsapp_fun,htmlAttributes: new {@placeholder = "(+55) Whatsaap", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="TEL_Func">
+                @Html.LabelFor(m => m.telefone_func, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.telefone_func,htmlAttributes: new {@placeholder = "Telefone Fixo", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_cidade">
+                @Html.LabelFor(m => m.DS_cidadae, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.DS_cidadae,htmlAttributes: new {@placeholder = "Cidade", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Sangue">
-            @Html.LabelFor(m => m.tipo_sanguineo_func, new { @class = "control-label" })
-            @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @placeholder = "Tipo Sanguineo", @class = "form-control" })
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-2 col-md-2" id="COMP_Funcionario">
+                @Html.LabelFor(m => m.compl_func, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.compl_func,htmlAttributes: new {@placeholder = "Complemento", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8" id="Ponto_Referencia">
+                @Html.LabelFor(m => m.ponto_referencia, new  {@class = "control-label"})
+                @Html.TextBoxFor(m => m.ponto_referencia,htmlAttributes: new {@placeholder = "Casa, Rua, Ponto Turístico", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="TP_Moradia">
+                @Html.LabelFor(m => m.tipo_moradia, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.tipo_moradia, htmlAttributes : new {@placeholder = "DropDown", @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Mae">
-            @(Html.LabelFor(m => m.nm_mae_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.nm_mae_func, htmlAttributes: new { @placeholder = "Nome Mãe", @class = "form-control" }))
+    </fieldset>
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border" style="font-size : 15px">
+            <b><i>Documentos Admissão</i></b>
+        </legend>
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-12 col-md-12" id="DS_CPF">
+                @Html.LabelFor(m => m.email_corp_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.email_corp_func, htmlAttributes : new {@placeholder = "User.Login@gmail.sp.gov.br", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DS_CPF">
+                @Html.LabelFor(m => m.cpf_funk, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.cpf_funk, htmlAttributes : new {@placeholder = "000-000.000-00", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Rg">
+                @Html.LabelFor(m => m.rg_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.rg_func, htmlAttributes : new {@placeholder = "00.000.000-0", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="ORG_Emissor">
+                @Html.LabelFor(m => m.orgao_emissor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.orgao_emissor_func, htmlAttributes : new {@placeholder = "Orgão Emissor", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="RES_Funcionario">
+                @Html.LabelFor(m => m.reservista_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.reservista_func, htmlAttributes : new {@placeholder = "000.000", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Titulo">
+                @Html.LabelFor(m => m.titulo_eleitor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.titulo_eleitor_func, htmlAttributes : new {@placeholder = "000.000.000.000", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="NM_Pai">
-            @(Html.LabelFor(m => m.nm_pai_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.nm_pai_func, htmlAttributes: new { @placeholder = "Nome Pai", @class = "form-control" }))
+        <div class="row" style="width: -15px;">
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Zona_Eleitoral">
+                @Html.LabelFor(m => m.zona_eleitor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.zona_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Sessao_Eleitor">
+                @Html.LabelFor(m => m.sessao_eleitor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.sessao_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DT_Emissao">
+                @Html.LabelFor(m => m.dt_emissao_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.dt_emissao_func, htmlAttributes : new {@placeholder = "dd/mm/yyyy", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-1 col-md-1" id="DS_CNS">
+                @Html.LabelFor(m => m.cns_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.cns_func, htmlAttributes : new {@placeholder = "CNS", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Zona_Eleitoral">
+                @Html.LabelFor(m => m.zona_eleitor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.zona_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3" id="DS_Cidade_Eleitoral">
+                @Html.LabelFor(m => m.cidade_eleitor_func, new {@class = "control-label"})
+                @Html.TextBoxFor(m => m.cidade_eleitor_func, htmlAttributes : new {@placeholder = "Cidade Eleitoral", @class = "form-control" })
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Estado_CV">
-            @Html.LabelFor(m => m.estado_civil_func, new { @class = "control-label" })
-            @Html.TextBoxFor(m => m.estado_civil_func, htmlAttributes: new {@placeholder = "Estado Civil", @class = "form-control" })
+    </fieldset>
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">
+            <b>Arquivos</b>
+        </legend>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Comprovante_Residencia">
+                @Html.LabelFor(m => m.cert_casamento_func, new {@class = "control-label"})
+                <input type="file" id="file-right" placeholder="Arquivo" />
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="CERT_Nas">
+                @Html.LabelFor(m => m.cert_nasc_func, new {@class = "control-label"})
+                <input type="file" id="file-open" placeholder="Arquivo" />
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4" id="CERT_Casa">
+                @Html.LabelFor(m => m.comprovante_res_func, new {@class = "control-label"})
+                <input type="file" id="file-close" placeholder="Arquivo" />
+            </div>
         </div>
-    </div>
+    </fieldset>
 </fieldset>
-<fieldset class="scheduler-border">
-    <legend class="scheduler-border" style="font-size : 15px">
-        <b><i>Endereço</i></b>
-    </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="NUM_Residencia">
-            @Html.LabelFor(m => m.numero_resr_func, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.numero_resr_func,htmlAttributes: new {@placeholder = "N° Residência", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Email">
-            @Html.LabelFor(m => m.email_func, new { @class = "control-label"})
-            @Html.TextBoxFor(m => m.email_func, htmlAttributes: new { @placeholder ="Exemplo@gmail.com", @class = "form-control"})
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="CEL_Funcionario">
-            @Html.LabelFor(m => m.celular_func, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.celular_func,htmlAttributes: new {@placeholder = "(+55) 00-00000-0000", @class = "form-control" })
-        </div>
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4" id="c">
+        <a id="aGravarFuncionario" class="btn btn-labeled btn-primary" href="javascript:submitGravar();">
+            <span class="btn-label" onclick="submit()"><i class="bi bi-0-circle"></i></span><b>Gravar</b>
+        </a>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="Whats_Funcionario">
-            @Html.LabelFor(m => m.whatsapp_fun, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.whatsapp_fun,htmlAttributes: new {@placeholder = "(+55) Whatsaap", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="TEL_Func">
-            @Html.LabelFor(m => m.telefone_func, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.telefone_func,htmlAttributes: new {@placeholder = "Telefone Fixo", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_cidade">
-            @Html.LabelFor(m => m.DS_cidadae, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.DS_cidadae,htmlAttributes: new {@placeholder = "Cidade", @class = "form-control" })
-        </div>
+    <div class="col-xs-12 col-sm-4 col-md-4" id="ID_Botao">
+        <a href="@Url.Action("Index")" class="btn btn-labeled btn-primary" > <span class="btn-label"><i class="bi bi-0-circle"></i></span>Voltar</a>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2" id="COMP_Funcionario">
-            @Html.LabelFor(m => m.compl_func, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.compl_func,htmlAttributes: new {@placeholder = "Complemento", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-8" id="Ponto_Referencia">
-            @Html.LabelFor(m => m.ponto_referencia, new  {@class = "control-label"})
-            @Html.TextBoxFor(m => m.ponto_referencia,htmlAttributes: new {@placeholder = "Casa, Rua, Ponto Turístico", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="TP_Moradia">
-            @Html.LabelFor(m => m.tipo_moradia, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.tipo_moradia, htmlAttributes : new {@placeholder = "DropDown", @class = "form-control" })
-        </div>
-    </div>
-</fieldset>
-<fieldset class="scheduler-border">
-    <legend class="scheduler-border" style="font-size : 15px">
-        <b><i>Documentos Admissão</i></b>
-    </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12" id="DS_CPF">
-            @Html.LabelFor(m => m.email_corp_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.email_corp_func, htmlAttributes : new {@placeholder = "User.Login@gmail.sp.gov.br", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DS_CPF">
-            @Html.LabelFor(m => m.cpf_funk, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.cpf_funk, htmlAttributes : new {@placeholder = "000-000.000-00", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Rg">
-            @Html.LabelFor(m => m.rg_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.rg_func, htmlAttributes : new {@placeholder = "00.000.000-0", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="ORG_Emissor">
-            @Html.LabelFor(m => m.orgao_emissor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.orgao_emissor_func, htmlAttributes : new {@placeholder = "Orgão Emissor", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="RES_Funcionario">
-            @Html.LabelFor(m => m.reservista_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.reservista_func, htmlAttributes : new {@placeholder = "000.000", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Titulo">
-            @Html.LabelFor(m => m.titulo_eleitor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.titulo_eleitor_func, htmlAttributes : new {@placeholder = "000.000.000.000", @class = "form-control" })
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Zona_Eleitoral">
-            @Html.LabelFor(m => m.zona_eleitor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.zona_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Sessao_Eleitor">
-            @Html.LabelFor(m => m.sessao_eleitor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.sessao_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DT_Emissao">
-            @Html.LabelFor(m => m.dt_emissao_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.dt_emissao_func, htmlAttributes : new {@placeholder = "dd/mm/yyyy", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-1 col-md-1" id="DS_CNS">
-            @Html.LabelFor(m => m.cns_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.cns_func, htmlAttributes : new {@placeholder = "CNS", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="DS_Zona_Eleitoral">
-            @Html.LabelFor(m => m.zona_eleitor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.zona_eleitor_func, htmlAttributes : new {@placeholder = "000", @class = "form-control" })
-        </div>
-        <div class="col-xs-12 col-sm-3 col-md-3" id="DS_Cidade_Eleitoral">
-            @Html.LabelFor(m => m.cidade_eleitor_func, new {@class = "control-label"})
-            @Html.TextBoxFor(m => m.cidade_eleitor_func, htmlAttributes : new {@placeholder = "Cidade Eleitoral", @class = "form-control" })
-        </div>
-    </div>
-</fieldset>
-<fieldset class="scheduler-border">
-    <legend class="scheduler-border">
-        <b>Arquivos</b>
-    </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Comprovante_Residencia">
-            @Html.LabelFor(m => m.cert_casamento_func, new {@class = "control-label"})
-            <input type="file" id="file-right" placeholder="Arquivo" />
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="CERT_Nas">
-            @Html.LabelFor(m => m.cert_nasc_func, new {@class = "control-label"})
-            <input type="file" id="file-open" placeholder="Arquivo" />
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4" id="CERT_Casa">
-            @Html.LabelFor(m => m.comprovante_res_func, new {@class = "control-label"})
-            <input type="file" id="file-close" placeholder="Arquivo" />
-        </div>
-    </div>
-</fieldset>
-</fieldset>
+</div>
 <script src="~/js/site.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
