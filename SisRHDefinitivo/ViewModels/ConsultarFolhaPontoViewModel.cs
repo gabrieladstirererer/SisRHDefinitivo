@@ -1,17 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using NuGet.Common;
 
-namespace SisRHDefinitivo.Core.Models
+namespace SisRHDefinitivo.Mvc.Adm.ViewModels
 {
-    public class FolhaPonto
+    public class ConsultarFolhaPontoViewModel
     {
-        public int Id_fp { get; set; }
-
-        public int? Fk_func { get; set; }
+        public IEnumerable<SisRHDefinitivo.Core.Models.FolhaPonto> Ponto { get; set; }
+        public int? matricula { get; set; }
+        public int dia { get; set; }
+        public int mes { get; set; }
+        public int ano { get; set; }
         [Display(Name = "Data")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public string Dt_apont_fp { get; set; }
@@ -44,6 +41,5 @@ namespace SisRHDefinitivo.Core.Models
         public string Horas_trabalhadas { get; set; }
         [Display(Name = "Extra")]
         public string Horas_extras { get; set; }
-
     }
 }

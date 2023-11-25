@@ -1,23 +1,29 @@
-﻿@model IEnumerable<SisRHDefinitivo.Core.Models.FolhaPonto>
+﻿@model SisRHDefinitivo.Mvc.Adm.ViewModels.ConsultarFolhaPontoViewModel
+
 @{
     ViewBag.Title = "ConsultarFolhaPonto";
 }
 <link href="~/css/Funcionario.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <style>
-body{
+    body {
         background: linear-gradient(to right, black, rgb(16, 16, 16),black);
-}
-.txtFiltro{
+    }
+
+    .txtFiltro {
         border: 1px groove rgb(28, 218, 255) !important;
         border-left-color: rgb(0,252,168) !important;
         border-top-color: rgb(0,252,168) !important;
         border-radius: 7px;
         background-color: rgb(16, 16, 16);
-        color: white 
-        }
+        color: white;
+        width: 160px;
+        margin-top: 15px;
+        text-align: center;
+    }
 
-fieldset.scheduler-border {
+    fieldset.scheduler-border {
         border: 1px groove rgb(28, 218, 255) !important;
         border-left-color: rgb(0,252,168) !important;
         border-top-color: rgb(0,252,168) !important;
@@ -25,7 +31,7 @@ fieldset.scheduler-border {
         margin: 0 0 1.5em 0 !important;
         -webkit-box-shadow: 0px 0px 0px 0px #000;
         box-shadow: 0px 0px 0px 0px #000;
-        }
+    }
 
     .custom-button {
         background: linear-gradient(to right, rgb(0, 252, 168), rgb(28, 218, 255));
@@ -38,9 +44,8 @@ fieldset.scheduler-border {
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
-        border-radius: 4px;
+        border-radius: 7px;
     }
-
 
 </style>
 <h1 style="color: rgb(28, 218, 255); font-size: 20px; text-align: center;">Consultar Folha de Ponto</h1>
@@ -50,74 +55,90 @@ fieldset.scheduler-border {
         <b><i>Filtros de pesquisa</i></b>
     </legend>
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3"><input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Matricula"/></div>
-        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Dia" /></div>
-        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Mes" /></div>
-        <div class="col-xs-12 col-sm-4 col-md-2"><input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Ano" /></div>
-        <div class="col-xs-12 col-sm-4 col-md-3"><input type="submit" class="custom-button" /></div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Matricula" /> *@
+            @Html.TextBoxFor(model => model.matricula, htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength="10" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-2">
+            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Dia" /> *@
+            @Html.TextBoxFor(model => model.dia, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength="2" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-2">
+            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Mes" /> *@
+            @Html.TextBoxFor(model => model.mes, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength="2" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-2">
+            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Ano" /> *@
+            @Html.TextBoxFor(model => model.ano, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength="4" })
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <a class="custom-button" role="button" asp-action="btnPesquisar"><i class="fa fa-search"></i><span>Pesquisar</span></a>
+        </div>
     </div>
 </fieldset>
-   
+
 
 <div class="grid">
     <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
         <tr style="color: rgb(28, 218, 255);">
-         <th>
-            @Html.DisplayNameFor(model => model.Nome_Func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dt_apont_fp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_E1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_S1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_E2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_S2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_E3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hr_apont_fp_S3)
-        </th>
-         <th>
-            @Html.DisplayNameFor(model => model.Desc_adv_fp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Horas_trabalhadas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Horas_extras)
-        </th>
-    </tr>
-            @foreach(var item in Model)
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dt_apont_fp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_E1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_S1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_E2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_S2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_E3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hr_apont_fp_S3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc_adv_fp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horas_trabalhadas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horas_extras)
+            </th>
+        </tr>
+        @if (Model.Ponto != null && Model.Ponto.Count() > 0)
+        {
+            @foreach (var item in Model.Ponto)
             {
-            <tr style="color: white">
+                <tr style="color: white">
                     <td>
-                     @Html.DisplayFor(modelItem => item.Nome_Func)
+                        @Html.DisplayFor(modelItem => item.Nome_Func)
                     </td>
 
-                     <td>
-                @Html.DisplayFor(modelItem => item.Dt_apont_fp)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dt_apont_fp)
                     </td>
 
-                     <td>
-                       @Html.DisplayFor(modelItem => item.Hr_apont_fp_E1)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hr_apont_fp_E1)
                     </td>
 
-                     <td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Hr_apont_fp_S1)
                     </td>
 
                     <td>
                         @Html.DisplayFor(modelItem => item.Hr_apont_fp_E2)
-                     </td>
+                    </td>
 
                     <td>
                         @Html.DisplayFor(modelItem => item.Hr_apont_fp_S2)
@@ -131,19 +152,20 @@ fieldset.scheduler-border {
                         @Html.DisplayFor(modelItem => item.Hr_apont_fp_S3)
                     </td>
 
-                     <td>
-                       @Html.DisplayFor(modelItem => item.Desc_adv_fp)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc_adv_fp)
                     </td>
 
-                     <td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Horas_trabalhadas)
                     </td>
 
-                     <td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Horas_extras)
                     </td>
-                     
+
                 </tr>
             }
-</table>
+        }
+    </table>
 </div>
