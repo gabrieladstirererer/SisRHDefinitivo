@@ -11,12 +11,17 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+    //validate() && document.forms["fmrFuncionario"]
 function submitGravar() {
-    validate() && document.forms["fmrFuncionario"].submit() 
+    $("#subGravarFuncionario").on("submit", function (event) {
+        alert("Handler for `submit` called.");
+        event.preventDefault();
+    });
+    validate();
 };
 
 function validate() {
-  
+
 }
 
 
