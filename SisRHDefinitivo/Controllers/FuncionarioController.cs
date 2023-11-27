@@ -9,6 +9,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Controllers
         
         public IActionResult Index()
         {
+            // consultar funcionario
             return View();
         }
 

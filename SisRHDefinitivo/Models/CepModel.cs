@@ -25,7 +25,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
 
 
         public static implicit operator CepModel(
-               Cep cep)
+              Cep cep)
         {
             return new CepModel()
             {
