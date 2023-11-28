@@ -22,15 +22,8 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-}
-
-.login-container {
-    width: 320px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin: 0;
 }
 
 .login-form label {
@@ -64,6 +57,12 @@ body {
 }
 /*
 teste ---------------------------------------*/
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 .login-dark {
     height: 1000px;
