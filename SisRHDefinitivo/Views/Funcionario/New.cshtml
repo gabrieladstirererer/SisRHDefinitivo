@@ -1,7 +1,8 @@
-﻿@model SisRHDefinitivo.Mvc.Adm.Models.FuncionarioModel
+﻿@model SisRHDefinitivo.Mvc.Adm.ViewsModel.Funcionario.NewViewModel
 
 <link href="~/css/Funcionario.css" rel="stylesheet">
 
+@* Ajustes na nova tela de cadastro *@ 
 
 @*Relogio digital*@
 <div class="clock">
@@ -39,7 +40,7 @@
                 @(Html.TextBoxFor(m => m.raca_func, htmlAttributes: new { @placeholder = "Raça", @class = "form-control" }))
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Sangue">
-                @Html.LabelFor(m => m.tipo_sanguineo_func, new { @class = "control-label" })
+                @Html.LabelFor(m => m.ultimo_nm_func, htmlAttributes: new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.ultimo_nm_func, htmlAttributes: new { @placeholder = "Tipo Sanguineo", @class = "form-control" })
             </div>
         </div>
