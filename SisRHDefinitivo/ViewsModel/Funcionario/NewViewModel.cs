@@ -5,7 +5,7 @@ namespace SisRHDefinitivo.Mvc.Adm.ViewsModel.Funcionario
 {
     public class NewViewModel : FuncionarioModel
     {
-        public Mvc.Adm.Models.FuncionarioModel Funcionario { get; set; }
+        public Mvc.Adm.Models.FuncionarioModel funcionario { get; set; }
         public IEnumerable<SelectListItem> TipoEnderecoList { get; set; }
     }
 }
