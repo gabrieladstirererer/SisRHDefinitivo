@@ -2,7 +2,7 @@
 {
     public class Funcionario
     {
-        public int? id_func { get; set; }
+        public int id_func { get; set; }
         public string primeiro_nm_func { get; set; }
         public string sobre_nm_func { get; set; }
         public string ultimo_nm_func { get; set; }

@@ -6,7 +6,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
     public class FuncionarioModel
     {
         [Display(Name = "Cod. Funcionario")]
-        public int? id_func { get; set; }
+        public int id_func { get; set; }
 
         [Display(Name = "Nome")]
         public string primeiro_nm_func { get; set; }

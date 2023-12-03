@@ -1,6 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using SisRHDefinitivo.Core.Repository;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+//builder.Services.AddCoreSisRHDaependencies();
+
+builder.Services.AddScoped<FuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
