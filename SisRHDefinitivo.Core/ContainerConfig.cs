@@ -6,7 +6,7 @@ namespace SisRHDefinitivo.Core.Repository
     {
         public static IServiceCollection AddCoreSisRHDaependencies(this IServiceCollection services)
         {
-            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+           // services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
 
             return services;
