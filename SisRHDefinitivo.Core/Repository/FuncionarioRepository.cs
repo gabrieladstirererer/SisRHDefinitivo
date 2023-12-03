@@ -1,4 +1,7 @@
-﻿
+﻿using SisRHDefinitivo.Core.Repository.Data;
+using System.Data.Entity;
+using SisRHDefinitivo.Core.Models;
+
 using System.Data.Entity;
 using SisRHDefinitivo.Core.Models;
 using SisRHDefinitivo.Core.Models.Views;
