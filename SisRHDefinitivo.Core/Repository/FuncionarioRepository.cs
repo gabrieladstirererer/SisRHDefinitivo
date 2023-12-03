@@ -1,40 +1,41 @@
-﻿
-//using System.Data.Entity;
-//using SisRHDefinitivo.Core.Models;
+﻿using SisRHDefinitivo.Core.Repository.Data;
+using System.Data.Entity;
+using SisRHDefinitivo.Core.Models;
 
-//namespace SisRHDefinitivo.Core.Repository
-//{
+namespace SisRHDefinitivo.Core.Repository
+{
 
-//    public class FuncionarioRepository :
-//        IFuncionarioRepository
-//    {
-//        private readonly DbContext _funcionarioRepository;
-       
-//        // Adicionando Construtor
-//        public FuncionarioRepository(
-//            DbContext funcionarioRepository)
-//        {
-//            _funcionarioRepository = funcionarioRepository;
-//        }
+    public class FuncionarioRepository : IFuncionarioRepository
+    {
+        private readonly BancoContext _funcionarioRepository;
 
-//        public async Task<Funcionario> AdicionarAsync(Funcionario funcionarioAdicionar)
-//        {
-            
-//            await _funcionarioRepository.Funcionarios.AdicionarAsync(Funcionario funcionarioAdicionar);
-//        }
+        // Adicionando Construtor
+        public FuncionarioRepository(
+            BancoContext funcionarioRepository)
+        {
+            _funcionarioRepository = funcionarioRepository;
+        }
 
-//        public Task<List<Funcionario>> ListarAsync()
-//        {
-          
-           
-//        }
+        public async Task<Funcionario> AdicionarAsync(Funcionario funcionarioAdicionar)
+        {
+            _funcionarioRepository.Funcionario.AddAsync(funcionarioAdicionar);
+            _funcionarioRepository.SaveChangesAsync();
+            return funcionarioAdicionar;
 
-//        public Task<Funcionario> Remove()
-//        {
-//            throw new NotImplementedException();
-//        }
-//    }
+        }
+
+        public async Task<List<Funcionario>> ListarAsync()
+        {
+            return await _funcionarioRepository.Funcionario.ToListAsync();
+
+        }
+
+        public Task<Funcionario> Remove()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 
-//}
+}
 
