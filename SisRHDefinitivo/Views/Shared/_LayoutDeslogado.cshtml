@@ -3,7 +3,7 @@
 
 <style>
 
-    body{
+    body {
         background: linear-gradient(to right, black, rgb(16, 16, 16),black);
     }
 
@@ -36,25 +36,11 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="SisRh" asp-action="Index">SisRh</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="Funcionario" asp-action="New">Cadastro Funcionario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="Apontamento" asp-action="ConsultarFolhaPonto">Consultar Folha Ponto</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            <h1 style="font-style:italic">Bem vindo ao SisRH</h1>
             @RenderBody()
         </main>
     </div>

@@ -9,6 +9,9 @@ namespace SisRHDefinitivo.Core.Repository
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
 
+            //services.AddScoped<ILoginRepository, LoginRepository>();
+
+
             return services;
         }
     }
