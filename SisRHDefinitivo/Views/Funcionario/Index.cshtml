@@ -1,4 +1,5 @@
-﻿@model SisRHDefinitivo.Mvc.Adm.Models.ConsultarFuncionarioViewModel
+﻿@model SisRHDefinitivo.Mvc.Adm.ViewModels.Funcionario.IndexViewModel
+
 <link href="~/css/Index.css" rel="stylesheet">
 
 <style>
@@ -22,12 +23,12 @@
     </legend>
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7">
-            @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
+            @(Html.LabelFor(m => m.DadosFuncionario.primeiro_nm_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.DadosFuncionario.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3">
-            @(Html.LabelFor(m => m.matricula_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.matricula_func, htmlAttributes: new { @placeholder = "Prontuario", @class = "form-control" }))
+            @(Html.LabelFor(m => m.DadosFuncionario.matricula_func, new { @class = "control-label" }))
+            @(Html.TextBoxFor(m => m.DadosFuncionario.matricula_func, htmlAttributes: new { @placeholder = "Prontuario", @class = "form-control" }))
         </div>
         <div class="col-xs-12 col-sm-4 col-md-3">
             <a class="custom-button" role="button" asp-action="Search"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></a>

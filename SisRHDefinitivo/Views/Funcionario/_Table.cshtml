@@ -1,4 +1,78 @@
 ﻿@model SisRHDefinitivo.Mvc.Adm.ViewModels.Funcionario.TableViewModel
 
- 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+
+<div class="row">
+    <div class="col-xs-col-12 col-xs-12 col-md-12">
+
+        @if (Model.DadosFuncionario.Count() == 0)
+        {
+            <table id="DadosCidadao" class="table table-condensed">
+                <tr class="centered">
+                    <td>
+                        <h3>Nenhum resultado</h3>
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
+            <table id="DadosCidadao" class="table table-condensed">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).fk_cargo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).id_func)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).primeiro_nm_func)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).email_corp_func)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).matricula_func)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DadosFuncionario.ElementAt(0).celular_func)
+                    </th>
+                </tr>
+                @foreach (var funcionarioItem in Model.DadosFuncionario)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.fk_cargo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.id_func)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.primeiro_nm_func)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.email_corp_func)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.matricula_func)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(funcionario => funcionarioItem.celular_func)
+                        </td>
+
+                        <td style=" width:20px;">
+                            <a class="custom-button" role="button" asp-action="Edit"><i class="bi bi-pencil-square"></i>&nbsp;&nbsp;<span>Editar</span></a>
+                        </td>
+                        <td style=" width:20px;">
+                            <a class="custom-button" role="button" asp-action="Edit"><i class="bi bi-trash3"></i>&nbsp;&nbsp;<span>Remover</span></a>
+                        </td>
+                   </tr>
+                }
+            </table>
+        }
+    </div>
+</div>
+
+
 

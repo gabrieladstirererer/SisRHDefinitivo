@@ -17,6 +17,9 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         [Display(Name = "Email Corporativo")]
         public string email_corp_func { get; set; }
 
+        [Display(Name = "Celular")]
+        public string celular_func { get; set; }
+
         [Display(Name = "Prontuario")]
         public int? matricula_func { get; set; }
         public int? fk_cargo { get; set; }

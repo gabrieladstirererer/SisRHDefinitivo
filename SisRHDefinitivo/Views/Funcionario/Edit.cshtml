@@ -1,15 +1,10 @@
-﻿@using System.Web.Mvc.Ajax;
-@model SisRHDefinitivo.Mvc.Adm.ViewModels.Funcionario.NewViewModel
+﻿@model SisRHDefinitivo.Mvc.Adm.ViewModels.Funcionario.EditViewModel
 
 <link href="~/css/Funcionario.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-
-<div class="clock">
-    <div class="time" id="time">12:00:00</div>
-</div>
 <fieldset class="scheduler-border">
     <legend class="scheduler-border" style="font-size: 30px;">
-         <b>+Inclusão de Funcionarios</b> 
+        <i class="bi bi-pen"></i><b>Edição de Funcionarios</b>
     </legend>
     <fieldset class="scheduler-border">
         <legend class="scheduler-border" style="font-size : 15px">
@@ -65,7 +60,7 @@
         <div class="row" style="width: -15px;">
             <div class="col-xs-12 col-sm-4 col-md-4" id="NUM_Residencia">
                 @Html.LabelFor(m => m.Funcionario.numero_resr_func, new  {@class = "control-label"})
-                @Html.TextBoxFor(m => m.numero_resr_func,htmlAttributes: new {@placeholder = "N° Residência", @class = "form-control" })
+                @Html.TextBoxFor(m => m.Funcionario.numero_resr_func,htmlAttributes: new {@placeholder = "N° Residência", @class = "form-control" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4" id="DS_Email">
                 @Html.LabelFor(m => m.Funcionario.email_func, new { @class = "control-label"})
@@ -183,18 +178,12 @@
     </fieldset>
 </fieldset>
 <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-4" id="ID_Cadastro">
-        <a class="custom-button" role="button" asp-action="adicionarFuncionario"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Adicionar</span></a>
+    <div class="col-xs-12 col-sm-4 col-md-4" id="c">
+        <a id="subGravarFuncionario" class="btn btn-labeled btn-primary" href="javascript:submitGravar();">
+            <span class="btn-label" onclick="submit()"><i class="bi bi-0-circle"></i></span><b>Gravar</b>
+        </a>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4" id="ID_Botao">
-        <a href="@Url.Action("Index")" class="btn btn-labeled btn-primary" > <span class="btn-label"><i class="bi bi-0-circle"></i></span>Voltar</a>
+        <a href="@Url.Action("Index")" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="bi bi-0-circle"></i></span>Voltar</a>
     </div>
 </div>
-
-<script src="~/js/site.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-

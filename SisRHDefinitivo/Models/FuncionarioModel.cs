@@ -18,7 +18,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         public string ultimo_nm_func { get; set; }
 
         [Display(Name = "Prontuario")]
-        public int? matricula { get; set; }
+        public int? matricula_func { get; set; }
 
         [Display(Name = "Data de Nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}", ApplyFormatInEditMode = true)]
@@ -43,7 +43,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         public string estado_civil_func { get; set; }
 
         [Display(Name = "Nome Conjugue Funcionario")]
-        public string nome_conjugue_func { get; set; }
+        public string nm_conjugue_func { get; set; }
 
         [Display(Name = "Cidade Nascimento" )]
         public string cidade_nasc { get; set; }
@@ -55,7 +55,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         public string uf_residencial { get; set; }
 
         [Display(Name = "Tipo Moradia")]
-        public string tipo_moradia { get; set; }
+        public string tipo_moradia_func { get; set; }
 
         [Display(Name = "Telefone(Celular)")]
         public string celular_func { get; set; }
@@ -85,7 +85,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         public int? fk_cargo { get; set; }
 
         [Display(Name = "Departamento")]
-        public int? fk_dep { get; set; }
+        public int? Fk_dep { get; set; }
 
         [Display(Name = "Banco")]
         public int? fk_banco { get; set; }
@@ -157,7 +157,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
                 primeiro_nm_func = funcionarioModel.primeiro_nm_func,
                 sobre_nm_func = funcionarioModel.sobre_nm_func,
                 ultimo_nm_func = funcionarioModel.ultimo_nm_func,
-                matricula = funcionarioModel.matricula,
+                matricula_func = funcionarioModel.matricula_func,
                 dt_nasc_func = funcionarioModel.dt_nasc_func,
                 sexo_func = funcionarioModel.sexo_func,
                 raca_func = funcionarioModel.raca_func,
@@ -165,11 +165,11 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
                 nm_mae_func = funcionarioModel.nm_mae_func,
                 nm_pai_func = funcionarioModel.nm_pai_func,
                 estado_civil_func = funcionarioModel.estado_civil_func,
-                nome_conjugue_func = funcionarioModel.nome_conjugue_func,
+                nm_conjugue_func = funcionarioModel.nm_conjugue_func,
                 cidade_nasc = funcionarioModel.cidade_nasc,
                 numero_resr_func = funcionarioModel.numero_resr_func,
                 uf_residencial = funcionarioModel.uf_residencial,
-                tipo_moradia = funcionarioModel.tipo_moradia,
+                tipo_moradia_func = funcionarioModel.tipo_moradia_func,
                 celular_func = funcionarioModel.celular_func,
                 whatsapp_fun = funcionarioModel.whatsapp_fun,
                 telefone_func = funcionarioModel.telefone_func,
@@ -178,7 +178,7 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
                 num_agen_func = funcionarioModel.num_agen_func,
                 num_conta_func = funcionarioModel.num_conta_func,
                 fk_cargo = funcionarioModel.fk_cargo,
-                fk_dep = funcionarioModel.fk_dep,
+                Fk_dep = funcionarioModel.Fk_dep,
                 fk_banco = funcionarioModel.fk_banco,
                 cpf_funk = funcionarioModel.cpf_funk,
                 rg_func = funcionarioModel.rg_func,
