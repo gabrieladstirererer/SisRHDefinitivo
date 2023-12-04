@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SisRHDefinitivo.Core.Models;
+using SisRHDefinitivo.Core.Models.Views;
+using SisRHDefinitivo.Core.Repository;
+
 
 
 namespace SisRHDefinitivo.Mvc.Adm.Controllers
