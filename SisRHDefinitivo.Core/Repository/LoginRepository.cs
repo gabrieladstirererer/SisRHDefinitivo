@@ -1,25 +1,43 @@
-﻿//using SisRH.Classes;
-//using SisRHDefinitivo.Core.Models;
-//using System.Data;
-//using System.Data.Entity;
-//using System.Data.SqlClient;
+﻿using SisRH.Classes;
+using SisRHDefinitivo.Core.Models;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 
-//namespace SisRHDefinitivo.Core.Repository
-//{
-//    public class LoginRepository : ILoginRepository
-//    {
-//        private readonly DbContext _context;
+namespace SisRHDefinitivo.Core.Repository
+{
+    public class LoginRepository : Conexao
+    {
+        public bool BuscarPorLogin(int Matricula, string Senha)
+        {
+            try
+            {
+                ConectarBanco();
+                cmd = new SqlCommand("Logar_select", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@matricula", Matricula);
+                cmd.Parameters.AddWithValue("@senha", Senha);
 
-//        public LoginRepository (DbContext context)
-//        {
-//            _context = context; 
-//        }
-
-//        //public Login BuscarPorLogin(string  login)
-//        //{
-//        //    return _context.Login
-//        //}
-
-
-//    }
-//}
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.HasRows == true)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                FecharBanco(cn);
+            }
+        }
+    }
+}
