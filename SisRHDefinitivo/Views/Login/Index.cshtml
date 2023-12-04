@@ -39,12 +39,12 @@
             <div class="illustration col-xs-12 col-sm-12 col-md-12"><i class="icon ion-ios-locked-outline"></i></div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12" id="">
-                @(Html.TextBoxFor(m => m.matricula, htmlAttributes: new { @class = "form-control", @placeholder = "Matrícula" }))
+                @(Html.TextBoxFor(m => m.matricula, htmlAttributes: new { @class = "form-control", @placeholder = "Matrícula", @maxlength = "10" }))
                 @Html.ValidationMessageFor(login => login.matricula)
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12" id="senha_login">
-                    @Html.PasswordFor(login => login.senha, htmlAttributes: new { @class = "form-control",  @placeholder ="Senha" })
+                    @Html.PasswordFor(login => login.senha, htmlAttributes: new { @class = "form-control",  @placeholder ="Senha", maxlength = "25" })
                     @Html.ValidationMessageFor(login => login.senha)
             </div>
 
