@@ -66,15 +66,19 @@
     {
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-3">
+                @Html.Label("prof", "Matricula")<br />
                 @Html.TextBox("prof", "0", htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength = 10, @type = "number" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("dia", "Dia")<br />
                 @Html.TextBox("dia", DateTime.Now.Day, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("mes", "Mês")<br />
                 @Html.TextBox("mes", DateTime.Now.Month, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("ano", "Ano")<br />
                 @Html.TextBox("ano", DateTime.Now.Year, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength = 4, @type = "number" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-3">
