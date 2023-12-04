@@ -1,5 +1,6 @@
 ﻿@model SisRHDefinitivo.Mvc.Adm.Models.ConsultarFuncionarioViewModel
 <link href="~/css/Index.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 <style>
     .custom-button {
@@ -20,23 +21,106 @@
     <legend class="scheduler-border">
         <b><i> Consulta de Funcionarios</i></b>
     </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-7 col-md-7">
-            @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
+    @using (Html.BeginForm("Index", "Funcionario", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-7 col-md-7">
+                @(Html.LabelFor(m => m.primeiro_nm_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.primeiro_nm_func, htmlAttributes: new { @placeholder = "Nome", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                @(Html.LabelFor(m => m.matricula_func, new { @class = "control-label" }))
+                @(Html.TextBoxFor(m => m.matricula_func, htmlAttributes: new { @placeholder = "Prontuario", @class = "form-control" }))
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <button class="custom-button" type="submit" style="margin-top: 10px;"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></button>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3">
-            @(Html.LabelFor(m => m.matricula_func, new { @class = "control-label" }))
-            @(Html.TextBoxFor(m => m.matricula_func, htmlAttributes: new { @placeholder = "Prontuario", @class = "form-control" }))
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-            <a class="custom-button" role="button" asp-action="Search"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></a>
-        </div>
-    </div>
+    }
 </fieldset>
 <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-4" id="ID_New">
-        <a href="@Url.Action("New")" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="bi bi-0-circle"></i></span>Adicionar</a>
+        <button class="btn btn-labeled btn-primary"><span>Cadastrar</span>&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
     </div>
 </div>
+    <div class="grid">
+    @if (Model.funcionarios != null && Model.funcionarios.Count() > 0)
+    {
+        <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
+            <tr style="color: rgb(28, 218, 255);">
+                <th>
+                    @Html.DisplayNameFor(model => model.matricula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome_func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sexo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cargo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.departamento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dataEmissao)
+                </th>               
+            </tr>
+
+            @foreach (var item in Model.funcionarios)
+            {
+                <tr style="color: white">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matricula_func)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data_Nascimento)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sexo)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cargo)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Departamento)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data_Emissao)
+                    </td>                   
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
+            <tr style="color: rgb(28, 218, 255); border-top: thick double #CD5C5C; border-bottom: thick double #CD5C5C;">
+                <td class="text-center"><h4 style="color: #fff; font-family: Georgia, serif;">Não há funcionarios com esse Nome ou Matricula</h4></td>
+            </tr>
+        </table>
+
+    }
+    </div>
+
 <script src="~/js/site.js"></script>

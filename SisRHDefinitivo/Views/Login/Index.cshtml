@@ -4,6 +4,20 @@
 
 @model SisRHDefinitivo.Core.Models.Login
 
+
+<style>
+    .txtFiltro {
+        border: 1px groove rgb(28, 218, 255) !important;
+        border-left-color: rgb(0,252,168) !important;
+        border-top-color: rgb(0,252,168) !important;
+        border-radius: 7px;
+        background-color: rgb(16, 16, 16);
+        color: white;
+        width: 100%;
+        margin-top: 5px;
+        text-align: center;
+    }
+</style>
 @{
     Layout = "_LayoutDeslogado";
     ViewBag.Title = "Login SisRH";
@@ -53,7 +67,7 @@
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12" id="btnLogin">
-                <input class="btn btn-primary btn-block" type="submit" value="Login"/> 
+                <button class="txtFiltro" type="submit"><span>Login</span></button>
             </div>
            @*  <div class="form-group col-xs-12 col-sm-12 col-md-12">
                 <a href="#" class="forgot">Esqueceu o usuário ou a senha?</a>

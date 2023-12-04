@@ -18,25 +18,23 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         public string email_corp_func { get; set; }
 
         [Display(Name = "Prontuario")]
-        public int? matricula_func { get; set; }
+        public int matricula_func { get; set; }
         public int? fk_cargo { get; set; }
+        [Display(Name = "Nome")]
+        public string nome_func { get;set; }
+        [Display(Name = "Data de Nascimento")]
+        public DateTime DataNascimento { get; set; }
+        public string telefone { get; set; }
+        public string sexo { get; set; }
+        public string cargo { get; set; }
+        public string departamento { get; set; }
+        [Display(Name = "Data de Emissão")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        public DateTime dataEmissao {  get; set; }
+        [Display(Name = "Matrícula")]
+        public int matricula { get; set; }
+        public IEnumerable<SisRHDefinitivo.Core.Models.Funcionario> funcionarios { get; set; }
 
-
-        public static implicit operator ConsultarFuncionarioViewModel(
-            ConsultarFuncionariosView consultarfuncionario)
-        {
-            return new ConsultarFuncionarioViewModel()
-            {
-                id_func = consultarfuncionario.id_func,
-                primeiro_nm_func = consultarfuncionario.primeiro_nm_func,
-                sobre_nm_func = consultarfuncionario.sobre_nm_func,
-                email_corp_func = consultarfuncionario.email_corp_func,
-                matricula_func = consultarfuncionario.matricula_func,
-                fk_cargo = consultarfuncionario.fk_cargo
-            };
-
-
-        }
     }
 
 }

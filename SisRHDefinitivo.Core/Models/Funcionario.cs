@@ -47,5 +47,14 @@
         public string comprovante_res_func { get; set; }
         public string nacionalidade_func { get; set; }
         public int? st_status_func { get; set; }
+        public int Matricula_func { get; set; }
+        public string? Nome { get; set; }
+        public DateTime? Data_Nascimento { get; set; }
+        public string? Sexo { get; set; }
+        public string? Telefone {  get; set; }
+        public string? Cargo { get; set; }
+        public string? Departamento { get; set; }
+        public DateTime? Data_Emissao {  get; set; }
+
     }
 }
