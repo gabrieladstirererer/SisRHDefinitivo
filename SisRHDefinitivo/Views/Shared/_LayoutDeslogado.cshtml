@@ -3,7 +3,7 @@
 
 <style>
 
-    body{
+    body {
         background: linear-gradient(to right, black, rgb(16, 16, 16),black);
     }
 
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/NavPrincipal.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SisRHDefinitivo.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
     <style>
@@ -27,8 +26,7 @@
         }
 
     </style>
-
-         <header>
+    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3" style="border-bottom: 1px groove rgb(28, 218, 255) !important;">
             <div class="container-fluid">
                 @* <img src="~/Imagens/logo.png" asp-controller="SisRh" alt="some text" width=120 height=99> *@
@@ -38,19 +36,6 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="SisRh" asp-action="Index">SisRh</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="Funcionario" asp-action="New">Cadastro Funcionario</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hoverable" style="color:rgb(28, 218, 255)" asp-area="" asp-controller="Apontamento" asp-action="ConsultarFolhaPonto">Consultar Folha Ponto</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
@@ -70,5 +55,4 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-   
 </html>

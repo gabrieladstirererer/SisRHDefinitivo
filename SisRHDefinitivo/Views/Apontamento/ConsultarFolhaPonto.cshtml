@@ -19,7 +19,7 @@
         background-color: rgb(16, 16, 16);
         color: white;
         width: 160px;
-        margin-top: 15px;
+        margin-top: 5px;
         text-align: center;
     }
 
@@ -48,75 +48,91 @@
     }
 
 </style>
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">        
+        @TempData["MensagemErro"]
+        <button style="margin-left: 80%;" type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" arial-label="Close">X</button>
+    </div>
+}
+
 <h1 style="color: rgb(28, 218, 255); font-size: 20px; text-align: center;">Consultar Folha de Ponto</h1>
 
 <fieldset class="scheduler-border">
     <legend class="scheduler-border">
         <b><i>Filtros de pesquisa</i></b>
     </legend>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3">
-            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Matricula" /> *@
-            @Html.TextBoxFor(model => model.matricula, htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength="10" })
+    @using (Html.BeginForm("ConsultarFolhaPonto", "Apontamento", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                @Html.Label("prof", "Matricula")<br />
+                @* @Html.TextBox("prof", "0", htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength = 10, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.matricula, htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="10", @id = "prof" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("dia", "Dia")<br />
+                @* @Html.TextBox("dia", DateTime.Now.Day, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.dia, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="2", @id = "dia" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("mes", "Mês")<br />
+                @* @Html.TextBox("mes", DateTime.Now.Month, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.mes, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="2", @id = "mes" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                @Html.Label("ano", "Ano")<br />
+                @* @Html.TextBox("ano", DateTime.Now.Year, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength = 4, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.ano, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="4", @id = "ano" })
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                <button class="custom-button" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></button>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-2">
-            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Dia" /> *@
-            @Html.TextBoxFor(model => model.dia, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength="2" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-2">
-            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Mes" /> *@
-            @Html.TextBoxFor(model => model.mes, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength="2" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-2">
-            @* <input type="text" class="txtFiltro" name="Nome" size="10" placeholder="Ano" /> *@
-            @Html.TextBoxFor(model => model.ano, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength="4" })
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-            <a class="custom-button" role="button" asp-action="ConsultarFolhaPonto"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></a>
-        </div>
-    </div>
+    }
 </fieldset>
 
 
 <div class="grid">
-    <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
-        <tr style="color: rgb(28, 218, 255);">
-            <th>
-                @Html.DisplayNameFor(model => model.Nome_Func)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dt_apont_fp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_E1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_S1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_E2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_S2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_E3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hr_apont_fp_S3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Desc_adv_fp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Horas_trabalhadas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Horas_extras)
-            </th>
-        </tr>
-        @if (Model.Ponto != null && Model.Ponto.Count() > 0)
-        {
+    @if (Model.Ponto != null && Model.Ponto.Count() > 0)
+    {
+        <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
+            <tr style="color: rgb(28, 218, 255);">
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome_Func)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dt_apont_fp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_E1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_S1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_E2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_S2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_E3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hr_apont_fp_S3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc_adv_fp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Horas_trabalhadas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Horas_extras)
+                </th>
+            </tr>
+
             @foreach (var item in Model.Ponto)
             {
                 <tr style="color: white">
@@ -166,6 +182,17 @@
 
                 </tr>
             }
-        }
-    </table>
+        </table>
+    }
+    else
+    {
+        <table class="table" style="border-radius: 5px; border-width: 1px; border-color: gray">
+            <tr style="color: rgb(28, 218, 255); border-top: thick double #CD5C5C; border-bottom: thick double #CD5C5C;">
+                <td class="text-center"><h4 style="color: #fff; font-family: Georgia, serif;">Não há apontamentos</h4></td>
+            </tr>
+        </table>
+
+    }
+
 </div>
+
