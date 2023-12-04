@@ -8,67 +8,112 @@ namespace SisRHDefinitivo.Mvc.Adm.Controllers
 {
     public class ApontamentoController : Controller
     {
-        public IActionResult ConsultarFolhaPonto()
+        public IActionResult ConsultarFolhaPonto(string prof, string dia, string mes, string ano)
         {
-            var vm = new ConsultarFolhaPontoViewModel();
-            var folhapontorepo = new FolhaPontoRepository();
-           
-            ModelState.Clear();
-            int prof = -1;
-            int dia = -1;
-            int mes = -1;
-            int ano = -1;
-
-            if (vm.matricula != 0 && vm.matricula != null)
+            try
             {
-                prof = Convert.ToInt16(vm.matricula);
-            }
 
-            if ((vm.dia > 0 && vm.dia < 32) && (vm.mes > 0 && vm.mes < 13) && (vm.ano > 1900 && vm.ano <= DateTime.Now.Year))
+                if (prof == null || (dia == null || mes == null || ano == null))
+                {
+                    var vm = new ConsultarFolhaPontoViewModel();
+                    var folhapontorepo = new FolhaPontoRepository();
+
+                    ModelState.Clear();
+                    //int prof = -1;
+                    //int dia = -1;
+                    //int mes = -1;
+                    //int ano = -1;   
+
+                    //vm.Ponto = folhapontorepo.ConsultarFolhaPonto(prof, dia, mes, ano);            
+                    vm.Ponto = folhapontorepo.ConsultarFolhaPonto(-1, -1, -1, -1);
+
+                    return View(vm);
+                }
+                else
+                {
+                    var vm = new ConsultarFolhaPontoViewModel();
+                    var folhapontorepo = new FolhaPontoRepository();
+                    ModelState.Clear();
+
+
+                    var diaP = -1;
+                    var mesP = -1;
+                    var anoP = -1;
+                    var matricula = -1;
+
+                    if (Convert.ToInt32(prof) > 0 && prof != null)
+                    {
+                        matricula = Convert.ToInt32(prof);
+                    }
+
+                    if ((Convert.ToInt32(dia) > 0 && Convert.ToInt32(dia) < 32) && (Convert.ToInt32(mes) > 0 && Convert.ToInt32(mes) < 13) && (Convert.ToInt32(ano) > 1900 && Convert.ToInt32(ano) <= DateTime.Now.Year))
+                    {
+                        diaP = Convert.ToInt32(dia);
+                        mesP = Convert.ToInt32(mes);
+                        anoP = Convert.ToInt32(ano);
+
+                        vm.Ponto = folhapontorepo.ConsultarFolhaPonto(matricula, diaP, mesP, anoP);
+
+
+                        return View(vm);
+                    }
+                    else
+                    {
+                        TempData["MensagemErro"] = $"Data não está válida!";
+
+                        return View(vm);
+                    }
+
+                }
+            }
+            catch (Exception ex)
             {
-                dia = vm.dia;
-                mes = vm.mes;
-                ano = vm.ano;
+                TempData["MensagemErro"] = $"Erro em fazer a pesquisa! " + ex;
+                return View("ConsultarFolhaPonto");
             }
-
-            var Ldia = DateTime.Now.Day - 1;
-            var Lmes = Ldia == 0 ? DateTime.Now.Month - 1 : DateTime.Now.Month;
-            var Lano = Lmes == 0 ? DateTime.Now.Year - 1 : DateTime.Now.Year;
-
-
-            vm.Ponto = folhapontorepo.ConsultarFolhaPonto(prof, dia, mes, ano);
-            vm.dia = Ldia != 0 ? Ldia : DateTime.DaysInMonth(Lano, Lmes);            
-            vm.mes = Lmes;
-            vm.ano = Lano;
-
-            return View(vm);
         }
 
-        //public IActionResult btnPesquisar(ConsultarFolhaPontoViewModel vm)
+        //public IActionResult Pesquisar(string prof, string dia, string mes, string ano)
         //{
-        //    var folhapontorepo = new FolhaPontoRepository();
-        //    ModelState.Clear();
-
-        //    var prof = -1;
-        //    var dia = -1;
-        //    var mes = -1;
-        //    var ano = -1;
-
-        //    if (vm.matricula != 0 && vm.matricula != null)
+        //    try 
         //    {
-        //        prof = Convert.ToInt16(vm.matricula);
+        //        var diaP = -1;
+        //        var mesP = -1;
+        //        var anoP = -1;
+        //        var matricula = -1;
+
+        //        if (Convert.ToInt32(prof) > 0 && prof != null)
+        //        {
+        //            matricula = Convert.ToInt32(prof);
+        //        }
+
+        //        if ((Convert.ToInt32(dia) > 0 && Convert.ToInt32(dia) < 32) && (Convert.ToInt32(mes) > 0 && Convert.ToInt32(mes) < 13) && (Convert.ToInt32(ano) > 1900 && Convert.ToInt32(ano) <= DateTime.Now.Year))
+        //        {
+        //            diaP = Convert.ToInt32(dia);
+        //            mesP = Convert.ToInt32(mes);
+        //            anoP = Convert.ToInt32(ano);
+
+        //            var folhapontorepo = new FolhaPontoRepository();
+        //            ModelState.Clear();
+
+        //            var vm = new ConsultarFolhaPontoViewModel();
+
+        //            vm.Ponto = folhapontorepo.ConsultarFolhaPonto(matricula, diaP, mesP, anoP);
+
+        //            return View(vm.Ponto);
+        //        }
+        //        else 
+        //        {
+        //            TempData["MensagemErro"] = $"Data não está válida!";
+
+        //            return View("ConsultarFolhaPonto");
+        //        }
+
         //    }
-
-        //    if ((vm.dia > 0 && vm.dia < 32) && (vm.mes > 0 && vm.mes < 13) && (vm.ano > 1900 && vm.ano <= DateTime.Now.Year))
-        //    {
-        //        dia = vm.dia;
-        //        mes = vm.mes;
-        //        ano = vm.ano;
+        //    catch (Exception ex) {
+        //        TempData["MensagemErro"] = $"Erro em fazer a pesquisa! " + ex;
+        //        return View("ConsultarFolhaPonto");
         //    }
-
-        //    vm.Ponto = folhapontorepo.ConsultarFolhaPonto(prof, dia, mes, ano);           
-
-        //    return View(vm);
         //}
     }
 }

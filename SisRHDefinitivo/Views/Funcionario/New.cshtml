@@ -1,7 +1,7 @@
 ﻿@model SisRHDefinitivo.Mvc.Adm.ViewsModel.Funcionario.NewViewModel
 
 <link href="~/css/Funcionario.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 @* Ajustes na nova tela de cadastro *@ 
 
 @*Relogio digital*@
@@ -184,14 +184,14 @@
     </fieldset>
 </fieldset>
 <div class="row">
-    <div class="col-xs-12 col-sm-4 col-md-4" id="c">
-        <a id="subGravarFuncionario" class="btn btn-labeled btn-primary" href="javascript:submitGravar();"> 
+     <div class="col-xs-12 col-sm-6 col-md-6" id="ID_Botao">
+        <a href="@Url.Action("Index")" class="btn btn-labeled btn-primary" style="margin-left: 5%;"><i class="bi bi-0-circle"></i><span>Voltar</span></a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6" id="c">
+        <a id="subGravarFuncionario" class="btn btn-labeled btn-primary" href="javascript:submitGravar();" style="margin-left: 80%;">
             <span class="btn-label" onclick="submit()"><i class="bi bi-0-circle"></i></span><b>Gravar</b>
         </a>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4" id="ID_Botao">
-        <a href="@Url.Action("Index")" class="btn btn-labeled btn-primary" > <span class="btn-label"><i class="bi bi-0-circle"></i></span>Voltar</a>
-    </div>
+    </div>   
 </div>
 <script src="~/js/site.js"></script>
 
