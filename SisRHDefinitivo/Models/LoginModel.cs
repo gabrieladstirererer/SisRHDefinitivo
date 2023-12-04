@@ -8,8 +8,13 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
         [Display(Name = "Login")]
         public int? id_login { get; set; }
 
+        [Display(Name = "Matrícula")]
+        [Required(ErrorMessage = "Digite a matrícula")]
+        public int? matricula { get; set; }
+
         [Display(Name = "Senha")]
-        public string senha_login { get; set; }
+        [Required(ErrorMessage = "Digite a senha")]
+        public string senha { get; set; }
 
         [Display(Name = "Trocar Senha")]
         public bool trocar_senha { get; set; }
@@ -20,7 +25,8 @@ namespace SisRHDefinitivo.Mvc.Adm.Models
             return new LoginModel
             {
                 id_login = loginModel.id_login,
-                senha_login = loginModel.senha_login,
+                matricula = loginModel.matricula,
+                senha = loginModel.senha,
                 trocar_senha = loginModel.trocar_senha
             };
 
