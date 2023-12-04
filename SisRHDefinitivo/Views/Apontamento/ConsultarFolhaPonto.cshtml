@@ -19,7 +19,7 @@
         background-color: rgb(16, 16, 16);
         color: white;
         width: 160px;
-        margin-top: 15px;
+        margin-top: 5px;
         text-align: center;
     }
 
@@ -67,19 +67,23 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-3">
                 @Html.Label("prof", "Matricula")<br />
-                @Html.TextBox("prof", "0", htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength = 10, @type = "number" })
+                @* @Html.TextBox("prof", "0", htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @name = "Nome", @maxlength = 10, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.matricula, htmlAttributes: new { @placeholder = "Matricula", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="10", @id = "prof" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 @Html.Label("dia", "Dia")<br />
-                @Html.TextBox("dia", DateTime.Now.Day, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" })
+                @* @Html.TextBox("dia", DateTime.Now.Day, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.dia, htmlAttributes: new { @placeholder = "Dia", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="2", @id = "dia" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 @Html.Label("mes", "Mês")<br />
-                @Html.TextBox("mes", DateTime.Now.Month, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" })
+                @* @Html.TextBox("mes", DateTime.Now.Month, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @name = "Nome", @maxlength = 2, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.mes, htmlAttributes: new { @placeholder = "Mes", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="2", @id = "mes" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-2">
                 @Html.Label("ano", "Ano")<br />
-                @Html.TextBox("ano", DateTime.Now.Year, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength = 4, @type = "number" })
+                @* @Html.TextBox("ano", DateTime.Now.Year, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @name = "Nome", @maxlength = 4, @type = "number" }) *@
+                @Html.TextBoxFor(model => model.ano, htmlAttributes: new { @placeholder = "Ano", @class = "txtFiltro", @type = "number" ,@name = "Nome", @maxlength="4", @id = "ano" })
             </div>
             <div class="col-xs-12 col-sm-4 col-md-3">
                 <button class="custom-button" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;<span>Pesquisar</span></button>
