@@ -1,4 +1,6 @@
-﻿namespace SisRHDefinitivo.Core.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SisRHDefinitivo.Core.Models
 {
     public class Funcionario
     {
@@ -49,11 +51,13 @@
         public int? st_status_func { get; set; }
         public int Matricula_func { get; set; }
         public string? Nome { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTime? Data_Nascimento { get; set; }
         public string? Sexo { get; set; }
         public string? Telefone {  get; set; }
         public string? Cargo { get; set; }
         public string? Departamento { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTime? Data_Emissao {  get; set; }
 
     }

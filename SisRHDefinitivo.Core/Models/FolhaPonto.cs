@@ -13,7 +13,7 @@ namespace SisRHDefinitivo.Core.Models
 
         public int? Fk_func { get; set; }
         [Display(Name = "Data")]
-        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public string Dt_apont_fp { get; set; }
         [Display(Name = "Entrada 1")]
         public TimeSpan? Hr_apont_fp_E1 { get; set; }
